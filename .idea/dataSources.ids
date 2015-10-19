@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - LabWebDB@localhost" uuid="b6e9e8b7-8701-40f7-afe3-0522d78d92c8">
+    <database-info product="MySQL" version="5.6.26-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="labwebdb"/>
+    <table name="account" schema="" catalog="labwebdb" type="TABLE">
+      <column name="Login" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="Email" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="Password" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="Account_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="User_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="Account_ID"/>
+      <foreign-key name="account_ibfk_1" columns="User_ID" ref-table="user" ref-schema="" ref-catalog="labwebdb" ref-columns="User_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="address" schema="" catalog="labwebdb" type="TABLE">
+      <column name="Address_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="Country" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="City" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="Street" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="Address_ID"/>
+      <exported-key name="user_ibfk_1" table="user" schema="" catalog="labwebdb" columns="Address_ID"/>
+    </table>
+    <table name="user" schema="" catalog="labwebdb" type="TABLE">
+      <column name="User_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="FirstName" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="Surname" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="Birthday" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="Address_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="Sex" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="User_ID"/>
+      <foreign-key name="user_ibfk_1" columns="Address_ID" ref-table="address" ref-schema="" ref-catalog="labwebdb" ref-columns="Address_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="account_ibfk_1" table="account" schema="" catalog="labwebdb" columns="User_ID"/>
+      <index name="Addres_ID" unique="false" columns="Address_ID"/>
+    </table>
+  </data-source>
+</component>

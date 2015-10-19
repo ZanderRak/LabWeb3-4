@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="commons-dbcp2-2.1.1">
+    <CLASSES>
+      <root url="jar://E:/LIB/commons-dbcp2-2.1.1.jar!/" />
+      <root url="jar://E:/LIB/commons-lang3-3.4.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://E:/LIB/commons-dbcp2-2.1.1-bin.zip!/commons-dbcp2-2.1.1/apidocs" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>
